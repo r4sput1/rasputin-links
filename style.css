@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.png);
+     --stroke-color: white;
+     --surface-color: rgba(0, 0, 0, 0.5);
+     --switch-bg-url: url(./assets/moon-stars.svg);
+
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgb(0, 0, 0);
+    --surface-color: rgba(0, 0, 0, 0.5);
+    --switch-bg-url: url(./assets/sun.svg);
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+#container {
+  width: 100%;
+  max-width: 500px;
+  margin: 56px auto 0px;
+  text-align: center;
+}
+#profile {
+  display: block;
+  padding: 20px;
+}
+#profile img {
+  width: 112px;
+  display: block;
+  margin: auto;
+
+}
+#profile p {
+  font-weight: 5000px;
+  line-height: 24px;
+  display: block;
+  padding: 10px;
+}
+/*switch*/
+
+#switch {
+  width: 64px;
+  position: relative;
+
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 9999px;
+
+  position: absolute;
+  top: 50;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-15%);
+
+  animation: slide-back 0.2s;
+}
+
+#switch span {
+  display: block;
+  align-items: center;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+.light #switch button {
+ animation: slide-in 0.4s forwards;
+ 
+}
+/* links */
+ul {
+  list-style: none;
+  font-weight: 500px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 16px 24px;
+
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--text-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+
+  text-decoration: none;
+  text-decoration-color: black;
+  font-weight: 500;
+  transition: background 0.5s;
+  transition: all 0.5s;
+}
+
+ul li a:hover {
+  border-radius: 8px;
+  border: 1.5px solid var(--text-color);
+  background: var(--surface-color);
+  backdrop-filter: blur(4px);
+  font-size: larger;
+}
+
+#social-links {
+  color: var(--text-color);
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+
+  padding: 2px 0;
+
+  font-size: 32px;
+}
+
+#social-links ion-icon {
+  color: var(--text-color);
+  font-size: 32px;
+  transition: all 0.5s;
+  background: 900px;
+  border-radius: 999px;
+}
+
+#social-links ion-icon:hover {
+  font-size: 40px;
+  background: 900px var(--surface-color);
+  border-radius: 999px;
+}
+
+footer {
+  align-items: center;
+  padding: 30px ;
+  color: var(--text-color);
+  text-decoration-color: var(--text-color);
+
+}
+
+footer a {
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.png); }
+  
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);  
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
+/* finished */
